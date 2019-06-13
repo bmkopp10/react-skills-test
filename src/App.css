@@ -43,8 +43,61 @@ input[type=button], input[type=submit], input[type=reset] {
   overflow: hidden;
   text-overflow: ellipsis;
   width: 300px;
+  text-align: center;
+  background-color: white;
+  margin: 20px;
+  border-radius: 20px;
 }
 
+.meal-image {
+  width:300px; 
+  height:300px;
+  border-radius:10px;
+  display:block;
+  background-position:center;
+  background-size: cover;
+}
+
+.recipe-card-details {
+  display: flex;
+  justify-content: space-around;
+  margin:10px;
+}
+
+.recipe-card-details-text {
+  font-size: small;
+  color: #757575;
+}
+
+.recipe-card-details-head {
+  display: block;
+}
+
+.detail-button {
+  width: 100%;
+  padding: 9px;
+  background-color: #ff5151;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+}
+body > div.ReactModalPortal > div > div {
+  position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    margin: auto;
+    width: 600px;
+}
 
 @keyframes App-logo-spin {
   from {
