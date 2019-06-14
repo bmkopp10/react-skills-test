@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import RecipePage from './pages/RecipePage';
+import AddPage from './pages/AddPage';
+import Header from './components/Header';
 
 
 class App extends Component {
@@ -10,12 +12,16 @@ class App extends Component {
     this.state = {
       recipes:[],
       loading:true,
+      page:'view',
+      buttonTitle: 'Add Recipe'
     }
+    this.switchPage = this.switchPage.bind(this)
+    this.addRecipeOnSuccess = this.addRecipeOnSuccess.bind(this)
   }
 
   componentDidMount() {
     //https://github.com/typicode/json-server
-    //json-server --port 3001 --watch /Users/briankopp/Repos/recipe-app/db.json 
+    //json-server --id uuid --port 3001 /Users/briankopp/Repos/recipe-app/db.json
     this.getRecipes()
   }
 
@@ -51,11 +57,24 @@ class App extends Component {
       })
   }
 
+  addRecipeOnSuccess(newRecipe){
+    let recipeArr = this.state.recipes
+    recipeArr.push(newRecipe)
+    this.setState({recipes: recipeArr})
+  }
+
+  switchPage () {
+    if (this.state.page === 'view') this.setState({page: 'add', buttonTitle: 'View Recipes'})
+    if (this.state.page === 'add') this.setState({page: 'view', buttonTitle: 'Add Recipe'})
+  }
+
   render(){
     if (this.state.loading) return <h1>Loading...</h1>
     return (
-      <div style={{backgroundColor: '#e9ebf2'}}>
-        <RecipePage recipes={this.state.recipes} />
+      <div>
+        <Header title="Welcome!" switchPage={this.switchPage} buttonTitle={this.state.buttonTitle}/>
+        {this.state.page === 'view' && <RecipePage recipes={this.state.recipes} />}
+        {this.state.page === 'add' && <AddPage addRecipeOnSuccess={this.addRecipeOnSuccess}/>}
       </div>
     )
   }

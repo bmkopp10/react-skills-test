@@ -1,39 +1,43 @@
-.header {
-  background-color: 'red';
-  font-size: 40;
+body {
+  min-height: 100vh;
+  background-color: #e9ebf2;
 }
 
-.badge {
-  position: absolute;
-  margin-left: 227px;
-  background-color: #ff4242;
-  color: white;
-  width: 40px;
-  height: 20px;
-  border-radius: 10px;
-  margin-top: 250px;
-  padding: 5px;
+.header-container {
+  background-color: white;
+    /* width: 680px; */
+    max-width: 100%;
+    border-radius: 20px;
+    margin: 20px;
 }
 
-.input {
-  padding: 5px 10px;
-  margin: 8px -1px;
-  box-sizing: border-box;
-  border: 1px black solid;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+.welcome {
+  padding: 20px 0px 0px 40px;
+  margin-bottom: -10px;
 }
 
-input[type=button], input[type=submit], input[type=reset] {
-  background-color: #ffffff;
-  color: #0c0c0c;
-  padding: 5px 10px;
-  text-decoration: none;
-  margin: 0px 0px;
-  border: 1px solid black;
-  cursor: pointer;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+.recipe-form {
+  width: 400px;
+  margin: auto;
+  padding-bottom: 60px;
+}
+
+.recipe-form label{
+  display: flex;
+  justify-content: space-between;
+  margin:20px;
+}
+
+.recipe-form input {
+  width:230px;
+}
+
+.recipe-form button {
+  margin: 10px;
+}
+
+.recipe-form-submit {
+  margin-left:145px;
 }
 
 .meal-container {
@@ -83,6 +87,18 @@ input[type=button], input[type=submit], input[type=reset] {
   border: none;
   border-radius: 20px;
 }
+.switch-button {
+  width: 200px;
+  padding: 9px;
+  background-color: #ff5151;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  margin: 20px;
+}
+
 body > div.ReactModalPortal > div > div {
   position: absolute;
     top: 40px;
@@ -97,6 +113,12 @@ body > div.ReactModalPortal > div > div {
     padding: 20px;
     margin: auto;
     width: 600px;
+}
+
+.special {
+  background-color: #ffff9b;
+  padding: 1px;
+  border-radius: 3px;
 }
 
 @keyframes App-logo-spin {

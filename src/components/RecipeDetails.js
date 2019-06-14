@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 function RecipeDetails (props) {
     console.log(props.details)
@@ -8,7 +8,7 @@ function RecipeDetails (props) {
             <label style={{display:'block'}}>
                 <input type="checkbox"/>{ingredient.ammount} {ingredient.measurement} {ingredient.name}
             </label>
-            {ingredient.special && <span>{ingredient.special.title} {ingredient.special.type} {ingredient.special.text}</span>}
+            {ingredient.special && <span className='special'>{ingredient.special.title} {ingredient.special.type} {ingredient.special.text}</span>}
         </div>
     )
     const directions = props.details.directions.map((direction, index) => 

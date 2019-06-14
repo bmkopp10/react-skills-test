@@ -3,6 +3,7 @@ import RecipeCard from '../components/RecipeCard';
 import ReactModal from 'react-modal';
 import RecipeDetails from '../components/RecipeDetails';
 
+
 ReactModal.setAppElement('#root');
 
 class RecipePage extends Component {
@@ -27,7 +28,7 @@ class RecipePage extends Component {
         return(
             <div>
                 <ReactModal isOpen={this.state.modalVisible}>
-                    <button onClick={this.closeRecipe}>Close Modal</button>
+                    <button onClick={this.closeRecipe}>Close</button>
                     <RecipeDetails details={this.state.recipeDetails}/>
                 </ReactModal>
                 {recipes}

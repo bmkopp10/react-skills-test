@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import Badge from './Badge';
 import '../App.css';
 
 class RecipeCard extends Component {
@@ -10,16 +9,13 @@ class RecipeCard extends Component {
     const prepTime = this.props.recipe.prepTime
     const cookTime = this.props.recipe.cookTime
     const servings = this.props.recipe.servings
-    //const ingredientList = this.props.recipe.ingredients
     
     return(
       <div style={{display:'inline-grid'}}>
         <div className='meal-container'>
           <h2>{name}</h2>
           <div className='meal-image' style={{backgroundImage: `url(${url})`}}></div>
-          {/* <img style={{width:300, height:300, borderRadius:10, display:'block'}} src={url} /> */}
           <p>{description}</p>
-          {/* <span>{this.props.recipe.cookTime + this.props.recipe.prepTime} min</span> */}
           <div className='recipe-card-details'>
             <div>
                 <span className='recipe-card-details-head'>{prepTime} min</span>
